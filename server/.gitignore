@@ -71,3 +71,5 @@ web_modules/
 
 # VSCode files
 .vscode
+
+/src/generated/prisma

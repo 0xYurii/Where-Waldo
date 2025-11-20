@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 // Health check route
 app.get("/", (req: Request, res: Response) => {
-  res.json({ message: "Blog API is running!" });
+  res.json({ message: "hello from index" });
 });
 
 app.listen(PORT, () => {

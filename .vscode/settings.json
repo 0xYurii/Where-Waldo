@@ -1,0 +1,7 @@
+{
+  "prisma.prismaVersion": "6.19.0",
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "prisma.trace.server": "off"
+}

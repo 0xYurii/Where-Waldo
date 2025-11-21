@@ -20,13 +20,13 @@ async function main() {
         create: [
           {
             name: "Waldo",
-            x_percent: 0.006472222,
-            y_percent: 0.003263889,
+            x_percent: 8.8888889,
+            y_percent: 11.3888889,
           },
           {
             name: "Wizard",
-            x_percent: 0.00323611111,
-            y_percent: 0.00756944444,
+            x_percent: 64.4444444,
+            y_percent: 32.222222,
           },
         ],
       },

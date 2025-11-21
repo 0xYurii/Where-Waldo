@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
@@ -11,5 +8,30 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+}
+
+model Photo {
+  id         Int         @id @default(autoincrement())
+  name       String      @unique
+  URL        String      @unique
+  characters Character[]
+  scores     Score[]
+}
+
+model Character {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  x_percent Float
+  y_percent Float
+  photoId   Int
+  photo     Photo    @relation(fields: [photoId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Score {
+  id      Int    @id @default(autoincrement())
+  name    String
+  time    Int
+  photoId Int
+  photo   Photo  @relation(fields: [photoId], references: [id], onDelete: Cascade)
 }
